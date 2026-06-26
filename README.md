@@ -793,6 +793,3 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-<div align="center">
-<sub>Built with care for EON Health — making wellness habits realistic, one calendar block at a time.</sub>
-</div>
