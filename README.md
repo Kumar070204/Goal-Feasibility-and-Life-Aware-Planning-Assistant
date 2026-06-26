@@ -117,39 +117,41 @@ In healthcare and preventative wellness, habit compliance is the single greatest
 ---
 
 ## 5. System Architecture
-graph TD
-    subgraph GC["Google Calendar Cloud"]
-        GCal["Google Calendar API v3"]
-    end
 
-    subgraph EON["EON Python Engine (EON_POC)"]
-        TS["token.pkl <br> credentials.json"] --> Auth["Google Auth Library"]
-        GCal <-->|Sync Events| API["Google API Client"]
+```mermaid
+flowchart TD
+    GCal[Google Calendar API v3]
 
-        CS["calendar_simulator.py"] -->|Insert Base Lifestyle| API
-        DS["delete_all_simulations.py"] -->|Reset Sandbox| API
+    TS[token.pkl / credentials.json] --> Auth[Google Auth Library]
+    Auth --> API[Google API Client]
+    GCal <--> API
 
-        API -->|Read Events| FSF["free_slot_finder.py"]
-        FSF -->|Compute Free Windows| Slots["slots.json"]
+    CS[calendar_simulator.py] --> API
+    DS[delete_all_simulations.py] --> API
 
-        FE["feasibility_engine.py"] -->|Evaluate Budgets| F_Calc["Feasibility Calculator"]
-        F_Calc -->|Output Metrics| Metrics["Average Busy, Sleep, Feasibility %"]
+    API --> FSF[free_slot_finder.py]
+    FSF --> Slots[slots.json]
 
-        SS["smart_scheduler.py"] -->|Pack Goals in Slots| S_Calc["Greedy Slot Allocator"]
-        S_Calc -->|Compile Schedules| Plans["plans.json"]
+    Slots --> FE[feasibility_engine.py]
+    FE --> FCalc[Feasibility Calculator]
+    FCalc --> Metrics[Busy / Sleep / Feasibility Percent]
 
-        PE["plan_explainer.py"] -->|Fetch plans.json| PE_Ollama["Ollama: Gemma 3"]
-        PE_Ollama -->|Generate Summaries| Insights["AI Insights"]
+    Slots --> SS[smart_scheduler.py]
+    SS --> SCalc[Greedy Slot Allocator]
+    SCalc --> Plans[plans.json]
 
-        SO["schedule_option.py"] -->|Sync Choice| SO_Sync["Sync Engine"]
-        SO_Sync -->|Write Events| API
-    end
+    Plans --> PE[plan_explainer.py]
+    PE --> Ollama[Ollama Gemma 3]
+    Ollama --> Insights[AI Insights]
 
-    subgraph WEB["Next.js Web Interface (web)"]
-        UI["Web Dashboard & Settings"] <-->|Fetch API Requests| Routes["Next.js API Routes"]
-        Routes -->|Execute Script Process| PR["python-runner.ts"]
-        PR -->|Execute python scripts| API
-    end
+    Plans --> SO[schedule_option.py]
+    SO --> SOSync[Sync Engine]
+    SOSync --> API
+
+    UI[Web Dashboard and Settings] --> Routes[Next.js API Routes]
+    Routes --> PR[python-runner.ts]
+    PR --> API
+```
 
 ### Component Breakdown
 
