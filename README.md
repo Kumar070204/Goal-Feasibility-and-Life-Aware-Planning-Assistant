@@ -231,19 +231,14 @@ After running the pipeline and syncing, EON maps the selected routine (e.g., Mor
 
 ---
 
-## 8. Demo Video
+## 8. Demo Video 🎥
 
-🎥 **Watch EON Life-Aware Planning Engine Demo**
+**[Watch EON Life-Aware Planning Engine Demo](https://drive.google.com/file/d/1lxVZtmOwFWccmkXdDfmZ97O-Pwtl1ki2/view?usp=sharing)**
 
-Below is the walkthrough video showing the system query Google Calendar events, evaluate the feasibility index in real-time, generate the morning and evening variations, and update Google Calendar immediately:
+Below is the walkthrough video showing the system query Google Calendar events, evaluate the feasibility index in real-time, generate the morning and evening variations, and update Google Calendar immediately.
 
-<p align="center">
-  <a href="EON%20Planning%20Engine.mp4">
-    <img src="Google_Calende_After_Synching_Morning_Plan.png" alt="EON Project Demo Video" width="60%"/>
-  </a>
-</p>
-
-*Link to the original raw video file:* **[EON Planning Engine.mp4](EON%20Planning%20Engine.mp4)**
+> [!TIP]
+> Click the link above to view or download the complete walkthrough video directly from Google Drive.
 
 > [!TIP]
 > GitHub does not play .mp4 files inline within a README — clicking the link above downloads/opens the raw file. For an inline playable preview, consider uploading the video to a GitHub Release or hosting it on YouTube and embedding that link instead.
