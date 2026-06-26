@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secrets and credentials
+credentials.json
+token.pkl
+.env*
+*.pem
+
+# Large media files
+*.mp4
+*.avi
+*.mkv
+
+# OS metadata
+.DS_Store
+Thumbs.db
