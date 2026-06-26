@@ -120,12 +120,12 @@ In healthcare and preventative wellness, habit compliance is the single greatest
 
 ```mermaid
 graph TD
-    subgraph Google Calendar Cloud
+    subgraph GCalCloud["Google Calendar Cloud"]
         GCal[Google Calendar API v3]
     end
 
-    subgraph EON Python Engine (EON_POC)
-        TS[token.pkl / credentials.json] --> Auth[Google Auth Library]
+    subgraph EONEngine["EON Python Engine (EON_POC)"]
+        TS["token.pkl / credentials.json"] --> Auth[Google Auth Library]
         GCal <-->|Sync Events| API[Google API Client]
 
         CS[calendar_simulator.py] -->|Insert Base Lifestyle| API
@@ -135,22 +135,22 @@ graph TD
         FSF -->|Compute Free Windows| Slots[slots.json]
 
         FE[feasibility_engine.py] -->|Evaluate Budgets| F_Calc[Feasibility Calculator]
-        F_Calc -->|Output Metrics| Metrics[Average Busy, Sleep, Feasibility %]
+        F_Calc -->|Output Metrics| Metrics["Average Busy, Sleep, Feasibility %"]
 
         SS[smart_scheduler.py] -->|Pack Goals in Slots| S_Calc[Greedy Slot Allocator]
         S_Calc -->|Compile Schedules| Plans[plans.json]
 
-        PE[plan_explainer.py] -->|Fetch plans.json| PE_Ollama[Ollama: Gemma 3]
+        PE[plan_explainer.py] -->|Fetch plans.json| PE_Ollama["Ollama: Gemma 3"]
         PE_Ollama -->|Generate Summaries| Insights[AI Insights]
 
         SO[schedule_option.py] -->|Sync Choice| SO_Sync[Sync Engine]
         SO_Sync -->|Write Events| API
     end
 
-    subgraph Next.js Web Interface (web)
-        UI[Web Dashboard & Settings] <-->|Fetch API Requests| Routes[Next.js API Routes]
+    subgraph NextWeb["Next.js Web Interface (web)"]
+        UI["Web Dashboard & Settings"] <-->|Fetch API Requests| Routes["Next.js API Routes"]
         Routes -->|Execute Script Process| PR[python-runner.ts]
-        PR -->|Execute python scripts| EON_Python_Engine
+        PR -->|Execute python scripts| EONEngine
     end
 ```
 
