@@ -214,7 +214,7 @@ flowchart TD
 The user's primary calendar contains work shifts, college schedules, meetings, and dinners. No wellness habits are scheduled, and open slots are fragmented.
 
 <p align="center">
-  <img src="assets/calendar_before.png" alt="Google Calendar Before EON Planning" width="80%"/>
+  <img src="Google_Calender_Before_Synching_Morning_Plan.png" alt="Google Calendar Before EON Planning" width="80%"/>
   <br/>
   <em>Figure 1: Sandbox primary calendar showing base commitments before scheduling.</em>
 </p>
@@ -224,13 +224,10 @@ The user's primary calendar contains work shifts, college schedules, meetings, a
 After running the pipeline and syncing, EON maps the selected routine (e.g., Morning Focus) and inserts the workouts, walks, and reading sessions into the free blocks.
 
 <p align="center">
-  <img src="assets/calendar_after.png" alt="Google Calendar After EON Planning" width="80%"/>
+  <img src="Google_Calende_After_Synching_Morning_Plan.png" alt="Google Calendar After EON Planning" width="80%"/>
   <br/>
   <em>Figure 2: Sandbox primary calendar after syncing EON's Morning Focused Plan.</em>
 </p>
-
-> [!NOTE]
-> Please save the screenshots in `web/public/assets/` or `assets/` at the root of the project with the names `calendar_before.png` and `calendar_after.png`.
 
 ---
 
@@ -241,15 +238,15 @@ After running the pipeline and syncing, EON maps the selected routine (e.g., Mor
 Below is the walkthrough video showing the system query Google Calendar events, evaluate the feasibility index in real-time, generate the morning and evening variations, and update Google Calendar immediately:
 
 <p align="center">
-  <a href="demo/demo.mp4">
-    <img src="assets/calendar_after.png" alt="EON Project Demo Video" width="60%"/>
+  <a href="EON%20Planning%20Engine.mp4">
+    <img src="Google_Calende_After_Synching_Morning_Plan.png" alt="EON Project Demo Video" width="60%"/>
   </a>
 </p>
 
-*Link to the original raw video file:* **[demo/demo.mp4](demo/demo.mp4)**
+*Link to the original raw video file:* **[EON Planning Engine.mp4](EON%20Planning%20Engine.mp4)**
 
 > [!TIP]
-> If you upload this project repository to GitHub, you can upload the video file `demo/demo.mp4` to a GitHub Release or host it on YouTube, then replace the URL in this section with the online video link.
+> GitHub does not play .mp4 files inline within a README — clicking the link above downloads/opens the raw file. For an inline playable preview, consider uploading the video to a GitHub Release or hosting it on YouTube and embedding that link instead.
 
 ---
 
@@ -257,26 +254,26 @@ Below is the walkthrough video showing the system query Google Calendar events, 
 
 ```text
 Goal-Feasibility-and-Life-Aware-Planning-Assistant/
-├── EON_POC/                        # Core Python Engine
-│   ├── app.py                      # Streamlit alternative local interface
-│   ├── calendar_simulator.py       # Google Calendar Sandbox injector
-│   ├── cleanup.py                  # Helper script to reset calendar states
-│   ├── credentials.json            # Google OAuth 2.0 client configuration (ignored)
-│   ├── delete_all_simulations.py   # Calendar simulation cleanup script
-│   ├── execution_logs.json         # History log file for UI console settings
-│   ├── feasibility_engine.py       # Compliance engine calculating feasibility %
-│   ├── free_slot_finder.py         # Google Calendar analyzer outputting free slots
-│   ├── plan_explainer.py           # Ollama Gemma 3 integration for AI summaries
-│   ├── plans.json                  # Compiled schedule options (Option 1 & 2)
-│   ├── schedule_option.py          # Google Calendar scheduling commit engine
-│   ├── slots.json                  # Extracted free slots grouped by day
-│   ├── smart_scheduler.py          # Greedy scheduling packing engine
-│   ├── test_calendar_insert.py     # Sandbox insertion verification script
-│   └── token.pkl                   # OAuth credentials user session token (ignored)
-├── web/                            # Full-stack Next.js Web Interface
+├── EON_POC/                                          # Core Python Engine
+│   ├── app.py                                        # Streamlit alternative local interface
+│   ├── calendar_simulator.py                         # Google Calendar Sandbox injector
+│   ├── cleanup.py                                    # Helper script to reset calendar states
+│   ├── credentials.json                              # Google OAuth 2.0 client configuration (ignored)
+│   ├── delete_all_simulations.py                     # Calendar simulation cleanup script
+│   ├── execution_logs.json                           # History log file for UI console settings
+│   ├── feasibility_engine.py                         # Compliance engine calculating feasibility %
+│   ├── free_slot_finder.py                           # Google Calendar analyzer outputting free slots
+│   ├── plan_explainer.py                             # Ollama Gemma 3 integration for AI summaries
+│   ├── plans.json                                    # Compiled schedule options (Option 1 & 2)
+│   ├── schedule_option.py                            # Google Calendar scheduling commit engine
+│   ├── slots.json                                    # Extracted free slots grouped by day
+│   ├── smart_scheduler.py                            # Greedy scheduling packing engine
+│   ├── test_calendar_insert.py                       # Sandbox insertion verification script
+│   └── token.pkl                                     # OAuth credentials user session token (ignored)
+├── web/                                               # Full-stack Next.js Web Interface
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── api/                # Next.js API Routes (Proxy to Python process)
+│   │   │   ├── api/                                  # Next.js API Routes (Proxy to Python process)
 │   │   │   │   ├── calendar/
 │   │   │   │   │   ├── action/route.ts
 │   │   │   │   │   └── status/route.ts
@@ -286,33 +283,31 @@ Goal-Feasibility-and-Life-Aware-Planning-Assistant/
 │   │   │   │       ├── analyze/route.ts
 │   │   │   │       ├── schedule/route.ts
 │   │   │   │       └── sync/route.ts
-│   │   │   ├── goals/              # Goal manager page
-│   │   │   ├── schedule/           # Schedule options & sync page
-│   │   │   ├── settings/           # System logs & settings page
-│   │   │   ├── globals.css         # Tailwind & custom CSS variables
-│   │   │   ├── layout.tsx          # Global template layout
-│   │   │   └── page.tsx            # Interactive main dashboard
+│   │   │   ├── goals/                                # Goal manager page
+│   │   │   ├── schedule/                             # Schedule options & sync page
+│   │   │   ├── settings/                             # System logs & settings page
+│   │   │   ├── globals.css                           # Tailwind & custom CSS variables
+│   │   │   ├── layout.tsx                            # Global template layout
+│   │   │   └── page.tsx                              # Interactive main dashboard
 │   │   ├── components/
-│   │   │   ├── Sidebar.tsx         # Shared navigation sidebar
-│   │   │   └── Toast.tsx           # Framer motion toast alerts
+│   │   │   ├── Sidebar.tsx                           # Shared navigation sidebar
+│   │   │   └── Toast.tsx                             # Framer motion toast alerts
 │   │   └── lib/
-│   │       └── python-runner.ts    # Node child process python execution manager
+│   │       └── python-runner.ts                      # Node child process python execution manager
 │   ├── package.json
 │   └── tsconfig.json
-├── demo/
-│   └── demo.mp4                    # Complete project walkthrough demonstration video
-├── assets/
-│   ├── calendar_before.png         # Image showing calendar prior to EON routine
-│   └── calendar_after.png          # Image showing calendar populated by EON routine
-├── .gitignore                      # Git ignored files configuration
-└── README.md                       # Documentation
+├── EON Planning Engine.mp4                            # Complete project walkthrough demonstration video
+├── Google_Calender_Before_Synching_Morning_Plan.png   # Calendar before EON scheduling
+├── Google_Calende_After_Synching_Morning_Plan.png     # Calendar after EON scheduling
+├── .gitignore                                         # Git ignored files configuration
+└── README.md                                          # Documentation
 ```
 
 | Directory | Purpose |
 | :--- | :--- |
 | **`EON_POC/`** | Holds the Python core engine scripts that handle Google Calendar API connections, parsing, greedy calculations, scheduling, and LLM text completions. |
 | **`web/`** | Holds the modern Next.js 16 user interface, complete with API routing endpoints that spawn the python modules asynchronously as child processes. |
-| **`demo/` & `assets/`** | Houses design walkthroughs, screenshots, and visual aids. |
+| **Root-level media files** | The demo video and before/after calendar screenshots referenced throughout this README. |
 
 ---
 
@@ -793,3 +788,6 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
+<div align="center">
+<sub>Built with care for EON Health — making wellness habits realistic, one calendar block at a time.</sub>
+</div>
