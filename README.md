@@ -173,108 +173,20 @@ flowchart TD
 Rather than scheduling every requested habit, EON first evaluates whether the user's goals are realistically achievable within their existing lifestyle.
 
 ```mermaid
-<mxGraphModel dx="1717" dy="937" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-  <root>
-    <mxCell id="0" />
-    <mxCell id="1" parent="0" />
-    <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;graph TD\n    subgraph Input Metrics\n        A[Calendar Busy Time]\n        B[User Sleep Preference]\n        C[Goal Time Needed]\n    end\n    subgraph Core Engine\n        D[Available Time] --&gt; E[Feasibility Score]\n        E --&gt; F{Overload Threshold}\n    end\n    subgraph Output Metrics\n        F --&gt;|Score &lt; 70%| G[Alert: Goal Overload]\n        F --&gt;|Score &gt;= 70%| H[Generate Options]\n    end\n&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="DVHj2Wa-Pw3KWAbGddyQ-1">
-      <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
-        <mxGeometry as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Input Metrics" mermaidId="n:Input Metrics" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Input Metrics" id="DVHj2Wa-Pw3KWAbGddyQ-2">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="327" width="288" x="30" y="30" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Calendar Busy Time" mermaidId="n:A" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Calendar Busy Time" id="DVHj2Wa-Pw3KWAbGddyQ-3">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="200" x="44" y="45" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="User Sleep Preference" mermaidId="n:B" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="User Sleep Preference" id="DVHj2Wa-Pw3KWAbGddyQ-4">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="218" x="35" y="149" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Goal Time Needed" mermaidId="n:C" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Goal Time Needed" id="DVHj2Wa-Pw3KWAbGddyQ-5">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-2" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="191" x="49" y="253" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Core Engine" mermaidId="n:Core Engine" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Core Engine" id="DVHj2Wa-Pw3KWAbGddyQ-6">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="652" width="308" x="408" y="122" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Available Time" mermaidId="n:D" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Available Time" id="DVHj2Wa-Pw3KWAbGddyQ-7">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-6" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="165" x="72" y="45" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Feasibility Score" mermaidId="n:E" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Feasibility Score" id="DVHj2Wa-Pw3KWAbGddyQ-8">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-6" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="178" x="66" y="285" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Overload Threshold" mermaidId="n:F" mermaidBaseStyle="rhombus;html=1;strokeWidth=1;whiteSpace=wrap;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Overload Threshold" id="DVHj2Wa-Pw3KWAbGddyQ-9">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-6" style="rhombus;html=1;strokeWidth=1;whiteSpace=wrap;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="238" width="238" x="35" y="389" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="" mermaidId="e:D-&gt;E#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="DVHj2Wa-Pw3KWAbGddyQ-10">
-      <mxCell edge="1" parent="DVHj2Wa-Pw3KWAbGddyQ-6" source="DVHj2Wa-Pw3KWAbGddyQ-7" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="DVHj2Wa-Pw3KWAbGddyQ-8">
-        <mxGeometry relative="1" as="geometry">
-          <Array as="points" />
-        </mxGeometry>
-      </mxCell>
-    </UserObject>
-    <UserObject label="" mermaidId="e:E-&gt;F#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="DVHj2Wa-Pw3KWAbGddyQ-11">
-      <mxCell edge="1" parent="DVHj2Wa-Pw3KWAbGddyQ-6" source="DVHj2Wa-Pw3KWAbGddyQ-8" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="DVHj2Wa-Pw3KWAbGddyQ-9">
-        <mxGeometry relative="1" as="geometry">
-          <Array as="points" />
-        </mxGeometry>
-      </mxCell>
-    </UserObject>
-    <UserObject label="Output Metrics" mermaidId="n:Output Metrics" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Output Metrics" id="DVHj2Wa-Pw3KWAbGddyQ-12">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-1" style="html=1;whiteSpace=wrap;strokeWidth=1;verticalAlign=top;fillColor=light-dark(#ffffde,#1f2020);strokeColor=light-dark(#aaaa33,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="124" width="514" x="311" y="823" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Alert: Goal Overload" mermaidId="n:G" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Alert: Goal Overload" id="DVHj2Wa-Pw3KWAbGddyQ-13">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-12" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="208" x="271" y="45" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Generate Options" mermaidId="n:H" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Generate Options" id="DVHj2Wa-Pw3KWAbGddyQ-14">
-      <mxCell parent="DVHj2Wa-Pw3KWAbGddyQ-12" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
-        <mxGeometry height="54" width="186" x="35" y="45" as="geometry" />
-      </mxCell>
-    </UserObject>
-    <UserObject label="Score &lt; 70%" mermaidId="e:F-&gt;G#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.93;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Score &lt; 70%" id="DVHj2Wa-Pw3KWAbGddyQ-15">
-      <mxCell edge="1" parent="DVHj2Wa-Pw3KWAbGddyQ-1" source="DVHj2Wa-Pw3KWAbGddyQ-9" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.93;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="DVHj2Wa-Pw3KWAbGddyQ-13">
-        <mxGeometry relative="1" as="geometry">
-          <Array as="points">
-            <mxPoint x="686" y="774" />
-            <mxPoint x="686" y="809" />
-            <mxPoint x="686" y="843" />
-          </Array>
-        </mxGeometry>
-      </mxCell>
-    </UserObject>
-    <UserObject label="Score &gt;= 70%" mermaidId="e:F-&gt;H#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.08;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="Score &gt;= 70%" id="DVHj2Wa-Pw3KWAbGddyQ-16">
-      <mxCell edge="1" parent="DVHj2Wa-Pw3KWAbGddyQ-1" source="DVHj2Wa-Pw3KWAbGddyQ-9" style="curved=1;startArrow=none;endArrow=block;endSize=7;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=light-dark(#E8E8E88D,#2a2a2a8D);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.08;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="DVHj2Wa-Pw3KWAbGddyQ-14">
-        <mxGeometry relative="1" as="geometry">
-          <Array as="points">
-            <mxPoint x="439" y="774" />
-            <mxPoint x="439" y="809" />
-            <mxPoint x="439" y="843" />
-          </Array>
-        </mxGeometry>
-      </mxCell>
-    </UserObject>
-  </root>
-</mxGraphModel>
+graph TD
+    subgraph Input Metrics
+        A[Calendar Busy Time]
+        B[User Sleep Preference]
+        C[Goal Time Needed]
+    end
+    subgraph Core Engine
+        D[Available Time] --> E[Feasibility Score]
+        E --> F{Overload Threshold}
+    end
+    subgraph Output Metrics
+        F -->|Score < 70%| G[Alert: Goal Overload]
+        F -->|Score >= 70%| H[Generate Options]
+    end
 
 ```
 
