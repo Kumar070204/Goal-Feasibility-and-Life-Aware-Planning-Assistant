@@ -196,6 +196,37 @@ graph TD
     G -->|>= 70%| I[Generate Schedule Options]
 ```
 
+### Product Metrics Used
+
+| Metric | Purpose |
+|---------|---------|
+| Average Busy Hours | Represents existing user commitments over a rolling 7-day window. |
+| Sleep Hours | Protects recovery time before allocating goal slots. |
+| Available Hours | Remaining daily capacity after mandatory commitments. |
+| Goal Time Needed | Total requested duration for configured goals. |
+| Feasibility Score | Predicts whether requested goals are realistically achievable. |
+
+### Product Design Decisions
+
+- **Rolling 7-day analysis** smooths weekday/weekend variations instead of relying on a single day's schedule.
+- **Feasibility Score is capped at 100%** to communicate maximum achievability without exposing unnecessary capacity values.
+- **70% overload threshold** introduces scheduling buffer to reduce burnout and improve long-term adherence.
+- **Multiple schedule options** (Morning Focused and Evening Focused) improve schedule adoption by allowing users to choose plans aligned with their routines.
+
+## 📈 Product Success Metrics
+
+If deployed as a production feature, EON could be evaluated using the following product KPIs.
+
+| KPI | Definition | Product Insight |
+|------|------------|-----------------|
+| Schedule Adoption Rate | Users selecting a generated schedule / Users completing planning | Indicates recommendation quality |
+| Weekly Sync Frequency | Average replans per active user | Measures continued engagement |
+| Goal Overload Rate | Percentage of planning sessions triggering overload alerts | Indicates unrealistic planning behaviour |
+| Goal Adjustment Rate | Users modifying goals after overload alert | Measures effectiveness of coaching nudges |
+| Goal Persistence | Consecutive weeks scheduled habits remain active | Long-term habit adherence metric |
+
+
+
 ```text
  User defines goals & sleep hours in UI
                   │
