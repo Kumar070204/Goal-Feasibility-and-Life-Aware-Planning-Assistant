@@ -168,6 +168,34 @@ flowchart TD
 
 ## 6. Workflow
 
+## 📊 Product Decision Framework
+
+Rather than scheduling every requested habit, EON first evaluates whether the user's goals are realistically achievable within their existing lifestyle.
+
+```mermaid
+graph TD
+    subgraph Input Metrics
+        A[Calendar Busy Time]
+        B[User Sleep Preference]
+        C[Goal Time Needed]
+    end
+
+    A --> D
+    B --> D
+    C --> E
+
+    subgraph Feasibility Engine
+        D[Available Time]
+        E[Goal Duration]
+        D --> F[Feasibility Score]
+        E --> F
+        F --> G{Decision Threshold}
+    end
+
+    G -->|< 70%| H[Goal Overload Alert]
+    G -->|>= 70%| I[Generate Schedule Options]
+```
+
 ```text
  User defines goals & sleep hours in UI
                   │
